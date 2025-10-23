@@ -1,6 +1,6 @@
 const PDFDocument = require('pdfkit');
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(405).send('Method Not Allowed');
     return;
@@ -22,4 +22,4 @@ module.exports = async (req, res) => {
   });
 
   doc.end();
-};
+}
